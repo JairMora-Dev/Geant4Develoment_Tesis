@@ -1,0 +1,57 @@
+/run/verbose 2
+/control/execute vis.mac
+/vis/open OGL 600x600-0+0
+/vis/sceneHandler/create OGL
+/vis/viewer/create ! ! 600x600-0+0
+/vis/viewer/refresh
+/vis/drawVolume
+/vis/scene/create
+/vis/scene/add/volume world -1 -1 none m 0 0 0 0 0 0
+/vis/sceneHandler/attach
+/vis/viewer/set/viewpointThetaPhi 90. 180.
+/vis/viewer/refresh
+/vis/scene/add/trajectories smooth
+/tracking/storeTrajectory 2
+/vis/scene/notifyHandlers
+/vis/scene/endOfEventAction accumulate
+/vis/viewer/set/autoRefresh true
+/vis/viewer/refresh
+/vis/verbose warnings
+/control/execute edep.mac
+/score/create/boxMesh boxMesh_1
+/score/mesh/boxSize 0.425. 0.425 1.27 cm
+/score/mesh/translate/xyz 0. 0. 0. mm
+/score/mesh/nBin 1 1 1000
+/score/quantity/energyDeposit eDep
+/score/close
+/score/list
+/tracking/verbose 0
+/gps/pos/type Plane
+/gps/pos/shape Rectangle
+/gps/ene/type Mono
+/gps/pos/centre 0. 0. -2.13 cm
+/gps/pos/halfx 0.2 mm
+/gps/pos/halfy 0.2 mm
+/gps/particle proton
+/gps/direction 0. 0. 1.
+/gps/energy 70 MeV
+/run/printProgress 10000
+/run/beamOn 1000
+/run/geometryModified
+/vis/scene/notifyHandlers scene-0
+/vis/enable
+/score/drawProjection boxMesh_1 eDep
+/vis/scene/create
+/vis/sceneHandler/attach scene-1
+/vis/viewer/set/viewpointThetaPhi 100 160 deg
+/vis/viewer/refresh
+/vis/scene/notifyHandlers
+/vis/open Qt
+/vis/sceneHandler/create Qt
+/vis/drawVolume world
+/vis/scene/create
+/vis/scene/add/volume world -1 -1 none m 0 0 0 0 0 0
+/vis/sceneHandler/attach
+/vis/viewer/copyViewFrom viewer-0
+/score/colorMap/setMinMax ! 0. 800.
+/control/loop drawSlice.mac iColumn 0 499 1

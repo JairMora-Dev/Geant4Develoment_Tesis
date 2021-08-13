@@ -1,0 +1,105 @@
+##################
+#
+# define scoring mesh
+#
+#creacion de la malla (mesh)
+/score/create/boxMesh boxMesh_1
+
+#tamaño de la caja en x, y, z
+/score/mesh/boxSize 2. 1. 3.  cm
+/score/mesh/translate/xyz 0. 0. 3. cm
+
+#division de los ejes x, y, z
+/score/mesh/nBin 1 1 1000
+
+#####################
+
+# define scorers and filters
+
+#se extrae la energia depositada
+/score/quantity/energyDeposit eDep
+
+#
+/score/close
+#
+/score/list
+#
+
+######
+
+/tracking/verbose 0
+#
+#se define tipo de particula y numero de eventos
+#
+##Direccion y tipo de fuente
+/gps/pos/type Plane
+/gps/pos/shape Rectangle
+
+#/gps/pos/type Point
+/gps/ene/type Mono
+/gps/pos/centre 0. 0. -2.13 cm
+#
+#
+/gps/pos/halfx 0.2 mm
+/gps/pos/halfy 0.2 mm
+#
+#
+/gps/particle proton
+/gps/direction 0. 0. 1.
+# 
+#
+#
+#
+/gps/energy 70 MeV
+# 
+# numero de eventos
+/run/printProgress 10000
+/run/beamOn 1000
+
+/vis/enable
+
+##########################
+
+#drawing projections
+#
+/score/drawProjection boxMesh_1 eDep
+#
+# sliced views
+#
+/vis/scene/create
+/vis/sceneHandler/attach scene-1
+/vis/viewer/set/viewpointThetaPhi 100 160 deg
+
+##########################
+#
+# new scene and viewer
+/vis/open Qt
+###/vis/open ATree
+###/vis/open DAWNFILE
+###/vis/open OGLSX
+/vis/drawVolume world
+/vis/viewer/copyViewFrom viewer-0
+/score/colorMap/setMinMax ! 0. 800.
+/control/loop drawSlice.mac iColumn 0 999 1
+
+###############
+
+##############################
+
+# Dump Scores to a file
+
+#se genera un archivo de salida con nombre eDep.txt
+/score/dumpQuantityToFile boxMesh_1 eDep 70MeV_Energiadepositada1000P.txt 
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+/Users/macbookpro/Desktop/JJTesis/DesexCristal-build/CMakeFiles/install/local.dir
+/Users/macbookpro/Desktop/JJTesis/DesexCristal-build/CMakeFiles/install/strip.dir
+/Users/macbookpro/Desktop/JJTesis/DesexCristal-build/CMakeFiles/install.dir
+/Users/macbookpro/Desktop/JJTesis/DesexCristal-build/CMakeFiles/list_install_components.dir
+/Users/macbookpro/Desktop/JJTesis/DesexCristal-build/CMakeFiles/rebuild_cache.dir
+/Users/macbookpro/Desktop/JJTesis/DesexCristal-build/CMakeFiles/edit_cache.dir
+/Users/macbookpro/Desktop/JJTesis/DesexCristal-build/CMakeFiles/StepCristal.dir

@@ -1,0 +1,7 @@
+/Users/macbookpro/Desktop/JJTesis/Amorfo-build/CMakeFiles/install/local.dir
+/Users/macbookpro/Desktop/JJTesis/Amorfo-build/CMakeFiles/install/strip.dir
+/Users/macbookpro/Desktop/JJTesis/Amorfo-build/CMakeFiles/install.dir
+/Users/macbookpro/Desktop/JJTesis/Amorfo-build/CMakeFiles/list_install_components.dir
+/Users/macbookpro/Desktop/JJTesis/Amorfo-build/CMakeFiles/rebuild_cache.dir
+/Users/macbookpro/Desktop/JJTesis/Amorfo-build/CMakeFiles/edit_cache.dir
+/Users/macbookpro/Desktop/JJTesis/Amorfo-build/CMakeFiles/StepCristal.dir
