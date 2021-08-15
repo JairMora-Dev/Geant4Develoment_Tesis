@@ -6,7 +6,7 @@ void Histo()
   TCanvas *c1 = new TCanvas("c1","multipads",900,700);
   
   c1->Divide(2,2);
-  gStyle->SetOptStat(kTRUE);
+    gStyle->SetOptStat(kTRUE);
  
   //Crear histograma en 1-D con nombre hist1 y rótulo h1; el histograma
   TH1D* hist1E = new TH1D("EDepos","Energia Depositada;Edep (keV);Eventos",300,0,300);
